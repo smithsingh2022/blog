@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { ensureAuthenticated} = require('../config/authentication');
+const { ensureAuthenticated} = require('../config/authentication/home');
 const path = require('path');
 const multer = require('multer');
 const app = express();
@@ -27,7 +27,7 @@ const storage = multer.diskStorage({
   })
   
   // Check File Type
-  function checkFileType(file, cb){
+  function checkFileType(file, tc){
     // Allowed ext
     const filetypes = /jpeg|jpg|png|gif/;
     // Check ext
