@@ -6,10 +6,10 @@ module.exports = function (req,res,next){
     try{
         const verified = jwt.verify(token,process.env.TOKEN_SECRET);
         req.user = verified;
-        req.next();
+        next();
 
     }catch(err){
-        res.status(400).send('Invalid Token');
+        res.status(404).send('Invalid Token');
 
     }
 }
