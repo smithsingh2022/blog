@@ -20,7 +20,7 @@ router.get('/',async(req,res) => {
             res.json(users)           
 
     }catch(err){
-        res.send('Error' + err) //if we get error
+        res.send('Error Signal Sent' + err) //if we get error
     }
 });  
 router.post('/register', (req, res) => {
