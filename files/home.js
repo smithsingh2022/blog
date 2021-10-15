@@ -50,7 +50,7 @@ router.post('/upload', (req, res) => {
     upload.array('myFile',5)(req, res, (err) => {
       if(err){
         
-        req.flash('error_msg','error occured');
+        req.flash('error','error occured');
         res.redirect('/upload'
           
         );
