@@ -2,7 +2,7 @@ const router = require('express').Router();
 const verify = require('./verifytoken');
 const user = require('../models/user');
 
-router.get('/',verify,(req,res)=>{
+router.get('/login',verify,(req,res)=>{
 
  res.send(req.user);
  
