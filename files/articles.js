@@ -1,7 +1,7 @@
 const express = require('express')
 const Article = require('../models/article')
 
-const { ensureAuthenticated} = require('../config/authentication');
+const { ensureAuthenticated} = require('../config/authentication/blogpage');
 const router = express.Router()
 const app = express()
 
@@ -37,7 +37,7 @@ router.put('/:id', async (req, res, next) => {
 
 router.delete('/:id', async (req, res) => {
   await Article.findByIdAndDelete(req.params.id)
-  res.redirect('/blogshome')
+  res.redirect('/blogshome/welcome')
 })
 
 function saveArticleAndRedirect(path) {
