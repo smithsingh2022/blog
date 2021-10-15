@@ -6,7 +6,7 @@ router.get('/',verify,(req,res)=>{
 
  res.send(req.user);
  
-  res.send(User.findOne({_id:req.user}));   use this in auth.js
+  res.send(User.findOne({_id:req.user}));   use this in authentication.js
 });
 
 
