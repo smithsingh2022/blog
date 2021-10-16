@@ -8,7 +8,7 @@ const jwt = require('jsonwebtoken');
 
 const { forwardAuthenticated } = require('../config/authentication');
 
-// Login Page
+// Login Page by witty-singh
 router.get('/login', forwardAuthenticated, (req, res) => res.render('login'));
 
 // Register Page
