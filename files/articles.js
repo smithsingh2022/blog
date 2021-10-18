@@ -21,7 +21,8 @@ router.get('/edit/:id',ensureAuthenticated , async (req, res) => {
 
 router.get('/:slug', ensureAuthenticated ,async (req, res) => {
   const article = await Article.findOne({ slug: req.params.slug })
-  if (article == null) res.redirect('/')
+  if (article == null) res.redirect('/home')
+  else res.redirect('/')
   res.render('articles/show', { article: article })
 })
 
